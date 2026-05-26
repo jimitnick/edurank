@@ -8,7 +8,7 @@ export const signInWithGoogle = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider,
     options: {
-      redirectTo: `http://localhost:3000/auth/callback`,
+      redirectTo: `https://edurank-eta.vercel.app//auth/callback`,
     },
   })
   
