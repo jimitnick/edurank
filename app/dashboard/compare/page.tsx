@@ -250,7 +250,7 @@ function ComparisonContent() {
                 <span className="bg-sky-500/10 text-sky-600 px-2 py-0.5 rounded-md text-[10px]">
                   QS Rank {c.qsRank}
                 </span>
-                <Link href={`/college?id=${c.id}`} className="text-primary hover:underline text-[11px]">
+                <Link href={`/dashboard/college?id=${c.id}`} className="text-primary hover:underline text-[11px]">
                   Details →
                 </Link>
               </div>
