@@ -82,7 +82,7 @@ export default function HomePage() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedColleges, setSelectedColleges] = useState<string[]>([]);
-  const [colleges,setColleges] = useState(null);
+  const [colleges, setColleges] = useState<any[] | null>(null);
   const { user, loading } = useAuth();
   useEffect(() => {
 
@@ -248,7 +248,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {colleges?.map((c) => (
+          {colleges?.map((c: any) => (
             <div key={c.id} className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group">
               {/* Image */}
               <div className="h-48 relative overflow-hidden bg-muted">

@@ -2,11 +2,16 @@
 
 import { useRouter, usePathname } from 'next/navigation'
 
-export default function PaginationControls({ currentPage, totalPages }) {
+interface PaginationControlsProps {
+  currentPage: number
+  totalPages: number
+}
+
+export default function PaginationControls({ currentPage, totalPages }: PaginationControlsProps) {
   const router = useRouter()
   const pathname = usePathname()
 
-  const handlePageChange = (page) => {
+  const handlePageChange = (page: number) => {
     router.push(`${pathname}?page=${page}`)
   }
 

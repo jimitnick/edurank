@@ -230,7 +230,7 @@ function CollegeDetailsContent() {
   
   const id = searchParams.get("id") || "stanford";
   // const college = UNIVERSITY_DETAILS[id] || UNIVERSITY_DETAILS.stanford;
-  const [colleges,setColleges] = useState([])
+  const [colleges,setColleges] = useState<any[]>([])
 
   const [activeTab, setActiveTab] = useState("Overview");
   const [isAboutExpanded, setIsAboutExpanded] = useState(false);

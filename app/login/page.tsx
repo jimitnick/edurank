@@ -11,8 +11,6 @@ import {
   ArrowRight, 
   ChevronLeft, 
   GraduationCap, 
-  Chrome, 
-  Linkedin,
   Building2
 } from "lucide-react";
 import { useAuth } from "@/context/userContext";

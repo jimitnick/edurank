@@ -149,6 +149,10 @@ type College = {
   rank?: number;
   rating?: number;
   fees?: number;
+  degreeType?: string;
+  desc?: string;
+  acceptance_rate?: number;
+  avg_package?: number;
 };
 function SearchContent() {
   const router = useRouter();
@@ -204,7 +208,7 @@ function SearchContent() {
     ?.pop()
     ?.trim();
 
-    const matchesCountry = selectedCountries.length === 0 || selectedCountries.includes(collegeCountry);
+    const matchesCountry = selectedCountries.length === 0 || selectedCountries.includes(collegeCountry || "");
     
     // Fees check
     const matchesFees = maxFees === 80000 || (c.fees && c.fees <= maxFees);
@@ -218,10 +222,10 @@ function SearchContent() {
 
     return matchesSearch && matchesCountry && matchesFees && matchesDegree && matchesCategory;
   }).sort((a, b) => {
-    if (sortBy === "rank") return a.rank - b.rank;
-    if (sortBy === "fees_low") return a.fees - b.fees;
-    if (sortBy === "fees_high") return b.fees - a.fees;
-    if (sortBy === "rating") return b.rating - a.rating;
+    if (sortBy === "rank") return (a.rank ?? 999999) - (b.rank ?? 999999);
+    if (sortBy === "fees_low") return (a.fees ?? 999999) - (b.fees ?? 999999);
+    if (sortBy === "fees_high") return (b.fees ?? 0) - (a.fees ?? 0);
+    if (sortBy === "rating") return (b.rating ?? 0) - (a.rating ?? 0);
     return 0;
   });
 
@@ -503,7 +507,9 @@ function SearchContent() {
                         </div>
                         <div className="hidden sm:block">
                           <div className="text-muted-foreground font-light text-[10px] uppercase">Avg Package</div>
-                          <div className="font-bold text-foreground">${(c.avg_package/1000).toFixed(0)}k/yr</div>
+                          <div className="font-bold text-foreground">
+                            {c.avg_package ? `$${(c.avg_package / 1000).toFixed(0)}k/yr` : "N/A"}
+                          </div>
                         </div>
                       </div>
 
