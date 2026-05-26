@@ -213,19 +213,7 @@ export default function LoginPage() {
                 </button>
               </div>
             </div>
-
-            {/* Desktop Keep Me Signed In */}
-            <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-light text-muted-foreground">
-                <input
-                  type="checkbox"
-                  checked={keepSignedIn}
-                  onChange={(e) => setKeepSignedIn(e.target.checked)}
-                  className="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary"
-                />
-                Keep me signed in
-              </label>
-            </div>
+            
 
             {/* Action Button */}
             <button
@@ -254,28 +242,16 @@ export default function LoginPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3.5">
-              <button className="flex items-center justify-center gap-2 py-2.5 px-4 bg-card border border-border hover:bg-background rounded-lg font-medium text-xs text-slate-700 transition-colors shadow-sm cursor-pointer" onClick={() => signInWithGoogle()}>
+            <div className="flex flex-1  w-full">
+              <button className="flex w-full items-center justify-center gap-2 py-2.5 px-4 dark:bg-zinc-700 bg-card border border-border hover:bg-background rounded-lg font-medium text-xs dark:text-white text-slate-700 transition-colors shadow-sm cursor-pointer" onClick={() => signInWithGoogle()}>
                 {/* <Chrome size={15} className="text-muted-foreground" /> */}
                 <span>Google</span>
-              </button>
-
-              {/* Desktop matches 'Institution', Mobile matches 'LinkedIn' */}
-              <button className="flex items-center justify-center gap-2 py-2.5 px-4 bg-card border border-border hover:bg-background rounded-lg font-medium text-xs text-slate-700 transition-colors shadow-sm cursor-pointer">
-                <span className="hidden lg:inline-flex items-center gap-2">
-                  <Building2 size={15} className="text-muted-foreground" />
-                  <span>Institution</span>
-                </span>
-                <span className="lg:hidden flex items-center gap-2">
-                  {/* <Linkedin size={15} className="text-blue-600 fill-blue-600" /> */}
-                  <span>LinkedIn</span>
-                </span>
               </button>
             </div>
           </div>
 
           {/* Footer Account Redirection */}
-          <p className="mt-8 text-center text-sm text-muted-foreground font-light">
+          {/* <p className="mt-8 text-center text-sm text-muted-foreground font-light">
             <span className="hidden lg:inline">New to EduRank? </span>
             <span className="lg:hidden">Don&#39;t have an account? </span>
             <Link 
@@ -285,7 +261,7 @@ export default function LoginPage() {
               <span className="hidden lg:inline">Create an account</span>
               <span className="lg:hidden">Sign Up</span>
             </Link>
-          </p>
+          </p> */}
         </div>
 
         {/* Footer links */}
